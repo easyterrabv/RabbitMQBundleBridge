@@ -3,7 +3,7 @@
 namespace SimpleBus\RabbitMQBundleBridge\Event;
 
 use PhpAmqpLib\Message\AMQPMessage;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 class AbstractMessageEvent extends Event
 {
@@ -20,10 +20,5 @@ class AbstractMessageEvent extends Event
     public function message()
     {
         return $this->message;
-    }
-
-    public function stopPropagation()
-    {
-        throw new \BadMethodCallException('Propagation should not be stopped');
     }
 }
